@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <TextView
+            android:id="@+id/make_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <View
+            android:layout_marginTop="50dp"
+            android:id="@+id/make_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintTop_toTopOf="@id/make_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/rect"
+            />
+
+        <LinearLayout
+            android:id="@+id/make_linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="@+id/make_frame"
+            app:layout_constraintBottom_toTopOf="@+id/make_button3"
+            >
+
+
+               <EditText
+                   android:layout_marginTop="10dp"
+                   android:id="@+id/make_email"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:ems="10"
+                   android:inputType="textEmailAddress"
+                   app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                   android:hint="e-mail"
+                   />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/make_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="8"
+                    android:hint="닉네임"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_frame" />
+                <Button
+                    android:id="@+id/check"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="중복확인"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/make_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="비밀번호 (6자리 이상)"
+                />
+
+            <EditText
+                android:id="@+id/make_password_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="비밀번호 확인"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보 수집 동의"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/make_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect_button"
+            app:layout_constraintTop_toBottomOf="@+id/make_linear1"
+            app:layout_constraintBottom_toBottomOf="@+id/make_frame"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="가입하기"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
