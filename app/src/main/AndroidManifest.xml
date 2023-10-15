@@ -25,9 +25,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="놀아주개"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/running"
+        android:label="Running"
+        android:roundIcon="@drawable/running"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fighting"
         android:usesCleartextTraffic="true"
@@ -54,7 +54,7 @@
         <activity android:name="com.moo.fighting.findidactivity"
             android:label="이메일/비밀번호 찾기"/>
         <activity android:name="com.moo.fighting.MainActivity"
-            android:label="놀아주개"/>
+            android:label="Running"/>
         <activity android:name="com.moo.fighting.makeprofileactivity"
             android:label="프로필 설정"/>
         <activity android:name="com.moo.fighting.Walk.Walk"
@@ -70,9 +70,9 @@
         <activity android:name="com.moo.fighting.y_writePost"
             android:label="글 쓰기"/>
         <activity android:name="com.moo.fighting.y_communityMain"
-            android:label="놀아주개"/>
+            android:label="Running"/>
         <activity android:name="com.moo.fighting.y_post"
-            android:label="놀아주개"/>
+            android:label="Running"/>
         <activity android:name="com.moo.fighting.y_modifyPost"
             android:label="글 수정"/>
 
