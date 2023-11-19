@@ -109,15 +109,14 @@ public class y_post extends AppCompatActivity {
         postcommentnum=(TextView)findViewById(R.id.postcommentnum);
         send=(ImageView)findViewById(R.id.send);
         et_comment=(EditText)findViewById(R.id.et_comment);
-        // 수정 삭제 주석처리
-//        postmenu=(ImageView)findViewById(R.id.postmenu); 
+        postmenu=(ImageView)findViewById(R.id.postmenu);
 
-//        postmenu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                showPopup(view);
-//            }
-//        });
+        postmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopup(view);
+            }
+        });
 
         post=(y_postInfo) intent.getExtras().getParcelable("postInfo");
         postid=post.getPostId();
