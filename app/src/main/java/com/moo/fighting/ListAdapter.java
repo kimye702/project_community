@@ -99,13 +99,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MainViewHolder
             }
         });
 
-        // 수정 삭제 주석처리해둔 부분
-//        cardView.findViewById(R.id.itemmenu).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showPopup(v, mainViewHolder.getAdapterPosition());
-//            }
-//        });
+        cardView.findViewById(R.id.itemmenu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopup(v, mainViewHolder.getAdapterPosition());
+            }
+        });
 
         return mainViewHolder;
     }
