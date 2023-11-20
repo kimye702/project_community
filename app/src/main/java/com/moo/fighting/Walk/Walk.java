@@ -299,7 +299,6 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
         }
 
         // 촬영 버튼 눌렀을 때
-        btn_photo.setVisibility(View.INVISIBLE);
         btn_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -319,7 +318,6 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
         });
 
         // 나의 산책기록 버튼 눌렀을때
-        btn_trace.setVisibility(View.INVISIBLE);
         btn_trace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
