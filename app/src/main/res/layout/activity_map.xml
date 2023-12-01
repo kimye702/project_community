@@ -5,10 +5,9 @@
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Walk.Walk"
     android:layout_margin="20dp"
-    >
+    android:orientation="vertical"
+    tools:context=".Walk.Walk">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,28 +29,17 @@
                 android:background="@drawable/rect"
                 android:orientation="vertical" />
 
-            <TextView
-                android:id="@+id/map_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="🐶 즐거운 산책 시간!! 😺"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/chronometer"
-                app:layout_constraintLeft_toLeftOf="@id/map_frame"
-                app:layout_constraintRight_toRightOf="@id/map_frame"
-                app:layout_constraintTop_toTopOf="@id/map_frame" />
-
             <Chronometer
                 android:id="@+id/chronometer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:textSize="50sp"
                 app:layout_constraintBottom_toTopOf="@id/linear_btn"
                 app:layout_constraintLeft_toLeftOf="@id/map_frame"
                 app:layout_constraintRight_toRightOf="@id/map_frame"
-                app:layout_constraintTop_toBottomOf="@id/map_name" />
+                app:layout_constraintTop_toTopOf="@id/map_frame" />
 
             <LinearLayout
                 android:id="@+id/linear_btn"
@@ -68,8 +56,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="#FFCFAB8D"
                     android:text="시작"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <Button
@@ -77,8 +65,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="#FFCFAB8D"
                     android:text="정지"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <Button
@@ -86,83 +74,75 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="#FFCFAB8D"
                     android:text="초기화"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
-            android:id="@+id/linear_map"
+        android:id="@+id/linear_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/linear_photo"
+        app:layout_constraintTop_toBottomOf="@id/map_frame">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="3"
-            app:layout_constraintTop_toBottomOf="@id/map_frame"
-            app:layout_constraintBottom_toTopOf="@id/linear_photo"
-            android:layout_marginTop="10dp">
-
-            <fragment
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MapsActivity" />
-        </LinearLayout>
-
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
+    </LinearLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/linear_map"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="10dp">
+        app:layout_constraintTop_toBottomOf="@id/linear_map">
 
         <LinearLayout
             android:id="@+id/linear_photo"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="horizontal"
             android:layout_weight="0.3"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintRight_toRightOf="parent">
 
             <Button
                 android:id="@+id/btn_photo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="10dp"
-                android:backgroundTint="#FFCFAB8D"
-                android:background="@drawable/camera" />
+                android:background="@drawable/camera"
+                android:backgroundTint="#FFCFAB8D" />
 
 
-    <!--        <ImageButton-->
-    <!--            android:id="@+id/btn_photo"-->
-    <!--            android:layout_width="50dp"-->
-    <!--            android:layout_height="50dp"-->
-    <!--            android:layout_marginHorizontal="10dp"-->
-    <!--            android:scaleType="centerInside"-->
-    <!--            android:background="@drawable/camera"/>-->
+            <!--        <ImageButton-->
+            <!--            android:id="@+id/btn_photo"-->
+            <!--            android:layout_width="50dp"-->
+            <!--            android:layout_height="50dp"-->
+            <!--            android:layout_marginHorizontal="10dp"-->
+            <!--            android:scaleType="centerInside"-->
+            <!--            android:background="@drawable/camera"/>-->
 
             <Button
-                    android:id="@+id/btn_trace"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="10dp"
-                    android:text="나의 산책 일지"
-                    android:textSize="14sp"
-                    android:backgroundTint="#FFCFAB8D"/>
-
-    <!--        <ImageButton-->
-    <!--            android:id="@+id/btn_trace"-->
-    <!--            android:layout_width="50dp"-->
-    <!--            android:layout_height="50dp"-->
-    <!--            android:layout_marginHorizontal="10dp"-->
-    <!--            android:scaleType="centerInside"-->
-    <!--            android:background="@drawable/note"/>-->
+                android:id="@+id/btn_trace"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/rect_button"
+                android:text="나의 러닝 일지"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tv_stats"
