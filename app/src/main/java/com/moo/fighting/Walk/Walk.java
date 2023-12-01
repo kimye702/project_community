@@ -250,10 +250,10 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
                     pace = sum_dist/time;
                     String total_pace = String.format("%.2fm/s",pace);
 
-//                    if(time>=3)
-//                        text.setText("오늘 산책한 거리는 : "+total_dist+"\n평균 산책 속도는 : "+total_pace);
-//                    else
-//                        text.setText("산책한 시간이 3초 미만입니다.\n산책 거리와 속도를 측정할 수 없습니다.");
+                    if(time>=3)
+                        text.setText("오늘 산책한 거리는 : "+total_dist+"\n평균 산책 속도는 : "+total_pace);
+                    else
+                        text.setText("산책한 시간이 3초 미만입니다.\n산책 거리와 속도를 측정할 수 없습니다.");
 
                     endRun = new Date();
                 }
@@ -305,8 +305,8 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
                 switch (v.getId()) {
                     case R.id.btn_photo:
                         // 썸네일 띄우는 부분
-                        //Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                        //startActivityForResult(cameraIntent, TAKE_PICTURE);
+                        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                        startActivityForResult(cameraIntent, TAKE_PICTURE);
 
                         // 저장한 사진 띄우는 부분. 달리고 있을때만!
                         if(running){
@@ -900,7 +900,7 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
 //                    }
 //                }
 
-            //TraceInfo traceInfo = new TraceInfo(contents, walktime, distance, pace);
+//            TraceInfo traceInfo = new TraceInfo(contents, walktime, distance, pace);
         }
 
 
@@ -917,10 +917,10 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
                     @Override
                     public void onSuccess(Void aVoid) {
                         startToast("산책정보 등록 성공");
-//                        // 수정한 부분 -> 오류나서 종료됨
-//                        WalkRecordView tf = (WalkRecordView) getSupportFragmentManager().findFragmentById(R.id.frame_record);
-//                        assert tf != null;
-//                        tf.traceUpdate(true);
+                        // 수정한 부분 -> 오류나서 종료됨
+                        WalkRecordView tf = (WalkRecordView) getSupportFragmentManager().findFragmentById(R.id.frame_record);
+                        assert tf != null;
+                        tf.traceUpdate(true);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
