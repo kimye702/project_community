@@ -11,41 +11,44 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/map_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingVertical="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rect">
 
-            <LinearLayout
-                android:id="@+id/map_frame"
+            <TextView
+                android:id="@+id/tv_ment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/rect"
-                android:orientation="vertical" />
+                android:layout_height="wrap_content"
+                android:text="오늘도 즐거운 러닝 시간!"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="@+id/map_frame" />
 
             <Chronometer
                 android:id="@+id/chronometer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:textSize="50sp"
-                app:layout_constraintBottom_toTopOf="@id/linear_btn"
                 app:layout_constraintLeft_toLeftOf="@id/map_frame"
                 app:layout_constraintRight_toRightOf="@id/map_frame"
-                app:layout_constraintTop_toTopOf="@id/map_frame" />
+                app:layout_constraintTop_toBottomOf="@id/tv_ment" />
 
             <LinearLayout
                 android:id="@+id/linear_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
                 app:layout_constraintBottom_toBottomOf="@id/map_frame"
                 app:layout_constraintLeft_toLeftOf="@id/map_frame"
                 app:layout_constraintRight_toRightOf="@id/map_frame"
@@ -53,7 +56,7 @@
 
                 <Button
                     android:id="@+id/start_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:text="시작"
@@ -62,7 +65,7 @@
 
                 <Button
                     android:id="@+id/stop_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:text="정지"
@@ -71,7 +74,7 @@
 
                 <Button
                     android:id="@+id/reset_btn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:text="초기화"
