@@ -204,9 +204,9 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
 
                     optFirst.anchor(0.5f, 0.5f);
                     optFirst.position(startLatLng);
-                    optFirst.title("산책 시작 지점");
+                    optFirst.title("start");
 
-                    BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.dog);
+                    BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.running);
                     Bitmap b = bitmapdraw.getBitmap();
                     Bitmap smallMarker = Bitmap.createScaledBitmap(b, 150, 150, false);
                     optFirst.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
@@ -231,9 +231,9 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
 
                     optSecond.anchor(0.5f, 0.5f);
                     optSecond.position(endLatLng);
-                    optSecond.title("산책 종료 지점");
+                    optSecond.title("end");
 
-                    BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.dog);
+                    BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.running);
                     Bitmap b=bitmapdraw.getBitmap();
                     Bitmap smallMarker = Bitmap.createScaledBitmap(b, 150, 150, false);
                     optSecond.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
@@ -251,9 +251,9 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
                     String total_pace = String.format("%.2fm/s",pace);
 
                     if(time>=3)
-                        text.setText("오늘 산책한 거리는 : "+total_dist+"\n평균 산책 속도는 : "+total_pace);
+                        startToast("오늘 산책한 거리는 : "+total_dist+"\n평균 산책 속도는 : "+total_pace);
                     else
-                        text.setText("산책한 시간이 3초 미만입니다.\n산책 거리와 속도를 측정할 수 없습니다.");
+                        startToast("산책한 시간이 3초 미만입니다.\n산책 거리와 속도를 측정할 수 없습니다.");
 
                     endRun = new Date();
                 }
@@ -391,7 +391,7 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
 
     //polyline을 그려주는 메소드
     private void drawPath(){
-        PolylineOptions options = new PolylineOptions().add(startLatLng).add(endLatLng).width(10).color(0xFFCD853F).geodesic(true);
+        PolylineOptions options = new PolylineOptions().add(startLatLng).add(endLatLng).width(10).color(0xFF3489FF).geodesic(true);
         polylines.add(mMap.addPolyline(options));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLatLng, 20));
     }
@@ -918,9 +918,9 @@ public class Walk extends AppCompatActivity implements OnMapReadyCallback, Activ
                     public void onSuccess(Void aVoid) {
                         startToast("산책정보 등록 성공");
                         // 수정한 부분 -> 오류나서 종료됨
-                        WalkRecordView tf = (WalkRecordView) getSupportFragmentManager().findFragmentById(R.id.frame_record);
-                        assert tf != null;
-                        tf.traceUpdate(true);
+//                        WalkRecordView tf = (WalkRecordView) getSupportFragmentManager().findFragmentById(R.id.frame_record);
+//                        assert tf != null;
+//                        tf.traceUpdate(true);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
